@@ -1,5 +1,11 @@
 -module(word).
--export([strlen/1]).
+-export([count/1]).
+-include_lib("eunit/include/eunit.hrl").
 
-strlen([]) -> 0;
-strlen([Char|Rest]) -> 1 + strlen(Rest).
+count([]) -> 0;
+count([Char|Rest]) -> 1 + count(Rest).
+
+count_test() ->
+    [
+        ?_assert(count("This is 4 words") =:= 4)
+    ].
