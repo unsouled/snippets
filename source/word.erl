@@ -1,8 +1,9 @@
 -module(word).
--export([count/1, is_whitespace/1]).
+-export([count/1]).
 -include_lib("eunit/include/eunit.hrl").
 
-is_whitespace(Char) when (Char == 32) or (Char == " ") -> 1;
+is_whitespace(32) -> 1;
+is_whitespace(" ") -> 1;
 is_whitespace(_) -> 0.
 
 count([]) -> 1;
