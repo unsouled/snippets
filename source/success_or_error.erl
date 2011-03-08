@@ -3,4 +3,4 @@
 -include_lib("eunit/include/eunit.hrl").
 
 print(success) -> io:fwrite("success\n");
-print({error, Message}) -> io:fwrite("error: message\n").
+print({error, Message}) -> io:format("error: ~p~n", [Message]).
